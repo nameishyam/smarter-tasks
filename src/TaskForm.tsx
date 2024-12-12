@@ -51,33 +51,36 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
 
   render() {
     return (
-      <form onSubmit={this.addTask} className="flex gap-2">
-        <input
-          type="text"
-          value={this.state.title}
-          onChange={this.titleChanged}
-          className="flex-grow px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-gray-400"
-          placeholder="Add a task..."
-        />
-        <input
-          type="text"
-          value={this.state.duedate}
-          onChange={this.dateChanged}
-          className="flex-grow px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-gray-400"
-          placeholder="Due Date..."
-        />
-        <input
-          type="text"
-          value={this.state.description}
-          onChange={this.descriptionChanged}
-          className="flex-grow px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-gray-400"
-          placeholder="Description..."
-        />
+      <form onSubmit={this.addTask} className="space-y-4">
+        <div className="flex flex-col gap-4">
+          <input
+            type="text"
+            value={this.state.title}
+            onChange={this.titleChanged}
+            className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 text-gray-800"
+            placeholder="Task title..."
+          />
+          <div className="flex gap-4">
+            <input
+              type="date"
+              value={this.state.duedate}
+              onChange={this.dateChanged}
+              className="flex-1 px-3 py-2 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 text-gray-800"
+            />
+            <input
+              type="text"
+              value={this.state.description}
+              onChange={this.descriptionChanged}
+              className="flex-1 px-3 py-2 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:border-gray-500 text-gray-800"
+              placeholder="Description..."
+            />
+          </div>
+        </div>
         <button
           type="submit"
-          className="px-4 py-2 text-sm text-white bg-gray-700 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+          className="w-full px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-colors duration-200"
         >
-          Add
+          Add Task
         </button>
       </form>
     );

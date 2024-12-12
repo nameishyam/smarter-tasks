@@ -11,7 +11,7 @@ interface State {}
 class TaskList extends React.Component<Props, State> {
   render() {
     return (
-      <div className="space-y-3">
+      <div className="space-y-4">
         {this.props.tasks.map((task, idx) => (
           <Task
             key={idx}
