@@ -31,7 +31,7 @@ class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
         <h1 className="text-4xl mb-4 font-bold text-gray-700">Smarter Tasks</h1>
         <h2 className="text-lg mb-8 text-gray-600">
           <span className="font-semibold">Project: </span>
-          Graduation Final Year Project (Revamp college website)
+          Todo Application
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="border border-gray-200 rounded-lg p-6 bg-white shadow-sm">

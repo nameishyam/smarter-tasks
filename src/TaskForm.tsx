@@ -39,7 +39,7 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
 
   dateChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     console.log(`${event.target.value}`);
-    this.setState({ duedate: new Date(event.target.value) });
+    this.setState({ duedate: event.target.value });
   };
 
   descriptionChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -60,7 +60,7 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
           placeholder="Add a task..."
         />
         <input
-          type="date"
+          type="text"
           value={this.state.duedate}
           onChange={this.dateChanged}
           className="flex-grow px-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-gray-400"

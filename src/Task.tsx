@@ -2,6 +2,8 @@ import React from "react";
 
 interface TaskProps {
   title: string;
+  duedate: string;
+  description: string;
 }
 
 class Task extends React.Component<TaskProps> {
