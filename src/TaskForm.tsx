@@ -1,11 +1,14 @@
 import React from "react";
 import { TaskItem } from "./types";
+
 interface TaskFormProps {
   addTask: (task: TaskItem) => void;
 }
+
 interface TaskFormState {
   title: string;
 }
+
 class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
   constructor(props: TaskFormProps) {
     super(props);
@@ -43,4 +46,5 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
     );
   }
 }
+
 export default TaskForm;

@@ -4,9 +4,11 @@ import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 
 interface TaskAppProp {}
+
 interface TaskAppState {
   tasks: TaskItem[];
 }
+
 class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
   constructor(props: TaskAppProp) {
     super(props);
