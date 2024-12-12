@@ -27,21 +27,21 @@ class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
 
   render() {
     return (
-      <div className="container py-10 max-w-4xl mx-auto">
-        <h1 className="text-3xl mb-2 font-bold text-slate-700">
-          Smarter Tasks
-        </h1>
-        <h1 className="text-lg mb-6 text-slate-600">
-          <span className="font-bold">Project: </span>
+      <div className="container py-8 px-4 max-w-4xl mx-auto min-h-screen bg-gray-50">
+        <h1 className="text-4xl mb-4 font-bold text-gray-700">Smarter Tasks</h1>
+        <h2 className="text-lg mb-8 text-gray-600">
+          <span className="font-semibold">Project: </span>
           Graduation Final Year Project (Revamp college website)
-        </h1>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="border border-slate-200 rounded-xl p-4">
-            <h1 className="text-slate-500 text-xl font-bold text-center mb-2">
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="border border-gray-200 rounded-lg p-6 bg-white shadow-sm">
+            <h2 className="text-gray-700 text-xl font-semibold text-center mb-4">
               Pending
-            </h1>
+            </h2>
             <TaskForm addTask={this.addTask} />
-            <TaskList tasks={this.state.tasks} />
+            <div className="mt-6">
+              <TaskList tasks={this.state.tasks} />
+            </div>
           </div>
         </div>
       </div>
