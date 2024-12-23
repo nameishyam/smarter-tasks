@@ -1,3 +1,4 @@
+import TaskApp from "./TaskApp";
 interface TaskProps {
   title: string;
   duedate: string;
@@ -20,6 +21,12 @@ const Task = (props: TaskProps) => {
             <span className="font-medium text-gray-700 mr-2">Description:</span>
             {props.description}
           </p>
+          <button
+            className="text-sm text-gray-800 underline"
+            onClick={TaskApp.deleteTask(0)}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </>
