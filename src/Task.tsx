@@ -21,12 +21,12 @@ const Task = (props: TaskProps) => {
             <span className="font-medium text-gray-700 mr-2">Description:</span>
             {props.description}
           </p>
-          <button
+          {/* <button
             className="text-sm text-gray-800 underline"
             onClick={TaskApp.deleteTask(0)}
           >
             Delete
-          </button>
+          </button> */}
         </div>
       </div>
     </>
