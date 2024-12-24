@@ -1,4 +1,3 @@
-import TaskApp from "./TaskApp";
 interface TaskProps {
   title: string;
   duedate: string;
