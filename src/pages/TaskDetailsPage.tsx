@@ -21,17 +21,11 @@ const TaskDetailsPage: React.FC = () => {
 
   return (
     <div className="bg-white shadow-md rounded-md p-4 m-8">
-      {task ? (
-        <>
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-lg font-medium">{task.title}</h3>
-          </div>
-          <p className="text-gray-600">{task.description}</p>
-          <p className="text-gray-600">{task.duedate}</p>
-        </>
-      ) : (
-        <p className="text-gray-600">Task not found</p>
-      )}
+      <div className="flex justify-between items-center mb-4">
+        <h3 className="text-lg font-medium">{task?.title}</h3>
+      </div>
+      <p className="text-gray-600">{task?.description}</p>
+      <p className="text-gray-600">{task?.duedate}</p>
     </div>
   );
 };

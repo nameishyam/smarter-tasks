@@ -18,6 +18,8 @@ const TaskForm = (props: TaskFormProps) => {
     description: "",
   });
 
+  const [nextId, setNextId] = React.useState(0);
+
   const titleChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     setFormState({ ...formState, title: event.target.value });
   };
@@ -39,7 +41,8 @@ const TaskForm = (props: TaskFormProps) => {
     if (formState.title.length === 0 || formState.duedate.length === 0) {
       return;
     }
-    props.addTask(formState);
+    props.addTask({ ...formState, id: nextId });
+    setNextId(nextId + 1);
     setFormState({ title: "", description: "", duedate: "" });
   };
 

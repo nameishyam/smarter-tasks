@@ -1,34 +1,35 @@
+import { TaskItem } from "./types";
+
 interface TaskProps {
-  title: string;
-  duedate: string;
-  description: string;
+  item: TaskItem;
+  removeTask: (task: TaskItem) => void;
 }
 
 const Task = (props: TaskProps) => {
+  const { item, removeTask } = props;
   return (
-    <>
-      <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 hover:shadow-md transition-shadow duration-200">
-        <h2 className="text-lg font-medium text-gray-800 mb-3">
-          {props.title}
-        </h2>
-        <div className="space-y-2">
-          <p className="text-sm text-gray-600">
-            <span className="font-medium text-gray-700 mr-2">Due Date:</span>
-            {props.duedate}
+    <div className="TaskItem p-4 rounded-lg shadow-md border border-slate-100 hover:shadow-lg transition-shadow duration-300">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+        <div className="mb-3 sm:mb-0">
+          <a href={`/tasks/${item.id || ""}`} className="group">
+            <h2 className="text-lg font-semibold text-slate-900 group-hover:underline">
+              {item.title}
+            </h2>
+          </a>
+          <p className="text-sm text-slate-500 mt-1">{item.duedate}</p>
+          <p className="text-sm text-slate-500 mt-1">
+            <span className="font-medium">Description:</span> {item.description}
           </p>
-          <p className="text-sm text-gray-600">
-            <span className="font-medium text-gray-700 mr-2">Description:</span>
-            {props.description}
-          </p>
-          {/* <button
-            className="text-sm text-gray-800 underline"
-            onClick={TaskApp.deleteTask(0)}
-          >
-            Delete
-          </button> */}
         </div>
+        <button
+          className="deleteTaskButton cursor-pointer flex items-center justify-center h-8 w-8 rounded-full bg-red-500 text-white hover:bg-red-600 transition-colors duration-300 shadow-md"
+          onClick={() => removeTask(item)}
+          aria-label="Delete Task"
+        >
+          <span className="text-sm font-bold">✕</span>
+        </button>
       </div>
-    </>
+    </div>
   );
 };
 

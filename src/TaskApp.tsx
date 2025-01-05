@@ -12,11 +12,6 @@ const TaskApp = () => {
     setTaskAppState({ tasks: [...taskAppState.tasks, task] });
   };
 
-  // const deleteTask = (index: number) => {
-  //   const newTasks = taskAppState.tasks.filter((_, idx) => idx !== index);
-  //   setTaskAppState({ tasks: newTasks });
-  // };
-
   const [taskAppState, setTaskAppState] = useLocalStorage<TaskAppState>(
     "tasks",
     {
